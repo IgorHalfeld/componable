@@ -4,7 +4,9 @@
   "description": "A library to build modern interfaces",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watchify": "./node_modules/.bin/watchify -vd -p browserify-hmr -e src/index.js -o build/componable.js",
+    "server": "./node_modules/.bin/http-server examples",
+    "dev": "./node_modules/.bin/npm-run-all --parallel watchify server"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/Halfeld/componable/issues"
   },
-  "homepage": "https://github.com/Halfeld/componable#readme"
+  "homepage": "https://github.com/Halfeld/componable#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "browserify-hmr": "^0.3.5",
+    "watchify": "^3.9.0"
+  }
 }
